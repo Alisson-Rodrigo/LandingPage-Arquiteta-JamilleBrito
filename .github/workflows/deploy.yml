@@ -1,0 +1,40 @@
+name: Deploy Landing Page Jamille
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Publish Application
+        run: dotnet publish -c Release -o publish
+
+      - name: Deploy to VPS via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}        # IP ou domínio da VPS
+          username: ${{ secrets.SERVER_USER }}      # Usuário SSH (ex.: "ubuntu")
+          key: ${{ secrets.SERVER_SSH_KEY }}          # Conteúdo da sua chave privada (formato PEM)
+          port: ${{ secrets.SERVER_PORT }}            # Porta SSH (geralmente "22")
+          script: |
+            cd /home/ubuntu/projects/LandingPage-Arquiteta-JamilleBrito
+            # Atualiza o repositório, se ele estiver clonado na VPS
+            git pull origin master || true
+            dotnet publish -c Release -o publish
+            sudo rm -rf /var/www/Landingpage-Jamille/*
+            sudo cp -r publish/* /var/www/Landingpage-Jamille/
+            sudo chown -R www-data:www-data /var/www/Landingpage-Jamille
+            sudo chmod -R 755 /var/www/Landingpage-Jamille
+            sudo systemctl restart Landingpage-Jamille
