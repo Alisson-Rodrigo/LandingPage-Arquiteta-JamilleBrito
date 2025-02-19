@@ -1,17 +1,41 @@
 .Services {
-    margin-top: 0; /* Remove qualquer margem superior */
-    padding-top: 0; /* Remove qualquer espaçamento interno no topo */
+    margin-top: 0;
+    padding-top: 0;
     position: relative;
     width: 100%;
-    height: 55vh; /* Ajuste conforme necessário */
+    height: 55vh;
     background-image: url("images/services-back.jpg");
-    background-size: cover;
-    background-position: center top; /* Mantém a imagem no topo */
+    background-size: 110%;
+    background-position: center top;
     background-repeat: no-repeat;
+    overflow: hidden; /* Garante que nada ultrapasse os limites */
 }
 
+/* Criando overlay escuro APENAS sobre a imagem de fundo */
+.Services::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Ajuste a opacidade conforme necessário */
+    z-index: 0; /* Mantém no fundo */
+}
 
+/* Mantém o texto visível acima do overlay */
+.Services-Header {
+    position: relative;
+    color: white; /* Mantém o texto branco para contraste */
+    text-align: center;
+    z-index: 1; /* Mantém o texto acima do overlay */
+}
 
+/* Quando o mouse passa sobre os cards, o fundo diminui o zoom e fica mais claro */
+.Services-Cards:hover ~ .Services {
+    background-size: 100%; /* Remove o zoom e exibe mais da imagem */
+    filter: brightness(1); /* Torna o fundo normal novamente */
+}
 
 /* Centralizar o título e subtítulo */
 .Services-Header {
@@ -49,27 +73,27 @@
 
 
 
+/* Animação ao passar o mouse no card */
 .Card {
-    width: 400px; /* Mantém a largura do card */
-    height: 500px; /* Aumenta a altura do card */
+    width: 400px;
+    height: 500px;
     text-align: center;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
-    flex-direction: column; /* Mantém o layout vertical */
+    flex-direction: column;
     margin-top: -200px;
     z-index: 2;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animação suave */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Efeito ao passar o mouse */
+/* Efeito no Card ao passar o mouse */
 .Card:hover {
     transform: translateY(-10px); /* Move o card para cima */
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Adiciona um efeito de sombra mais forte */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
 }
-
 /* Ajusta a área onde a imagem será colocada */
 .Card-Image1 {
     width: 100%; /* Agora ocupa toda a largura do card */
