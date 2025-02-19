@@ -22,7 +22,8 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Publish Application
-        run: dotnet publish LandingPage-Arquiteta-JamilleBrito/LandingPage-Arquiteta-JamilleBrito.csproj -c Release -o publish
+        working-directory: ./LandingPage-Arquiteta-JamilleBrito
+        run: dotnet publish -c Release -o publish
 
       - name: Deploy to VPS via SSH
         uses: appleboy/ssh-action@master
@@ -34,7 +35,7 @@ jobs:
           script: |
             cd /home/ubuntu/projects/LandingPage-Arquiteta-JamilleBrito
             git pull origin master || true
-            dotnet publish LandingPage-Arquiteta-JamilleBrito/LandingPage-Arquiteta-JamilleBrito.csproj -c Release -o publish
+            dotnet publish -c Release -o publish
             sudo rm -rf /var/www/Landingpage-Jamille/*
             sudo cp -r publish/* /var/www/Landingpage-Jamille/
             sudo chown -R www-data:www-data /var/www/Landingpage-Jamille
