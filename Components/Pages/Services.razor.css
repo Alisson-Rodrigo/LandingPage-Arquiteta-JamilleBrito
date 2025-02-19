@@ -1,0 +1,10 @@
+.Card{
+    background-color: aquamarine;
+}
+
+Services_Cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
