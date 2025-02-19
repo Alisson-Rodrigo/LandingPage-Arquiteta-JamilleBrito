@@ -1,10 +1,128 @@
-.Services{
-    margin-top: 4rem;
+.Services {
+    margin-top: 0;
+    padding-top: 0;
+    position: relative;
+    width: 100%;
+    height: 55vh;
     background-image: url("images/services-back.jpg");
-    
+    background-size: 110%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    overflow: hidden; /* Garante que nada ultrapasse os limites */
 }
 
-.Services-Header{
-    color: white;
+/* Criando overlay escuro APENAS sobre a imagem de fundo */
+.Services::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Ajuste a opacidade conforme necessário */
+    z-index: 0; /* Mantém no fundo */
+}
+
+/* Mantém o texto visível acima do overlay */
+.Services-Header {
+    position: relative;
+    color: white; /* Mantém o texto branco para contraste */
     text-align: center;
+    z-index: 1; /* Mantém o texto acima do overlay */
+}
+
+/* Quando o mouse passa sobre os cards, o fundo diminui o zoom e fica mais claro */
+.Services-Cards:hover ~ .Services {
+    background-size: 100%; /* Remove o zoom e exibe mais da imagem */
+    filter: brightness(1); /* Torna o fundo normal novamente */
+}
+
+/* Centralizar o título e subtítulo */
+.Services-Header {
+    padding-top: 100px ;
+    text-align: center;
+    color: white;
+}
+
+/* Área onde as imagens ficarão sobre o fundo */
+.Services-Images {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+
+
+/* Os cards devem ficar FORA do fundo */
+.Cards-Wrapper {
+    background-color: white;
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+/* Organizando os cards fora do fundo */
+
+/* Ajuste global para os cards */
+.Services-Cards {
+    display: flex;
+    justify-content: center;
+    gap: 3rem; /* Aumenta o espaçamento entre os cards */
+}
+
+
+
+
+/* Animação ao passar o mouse no card */
+.Card {
+    width: 400px;
+    height: 500px;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-top: -200px;
+    z-index: 2;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Efeito no Card ao passar o mouse */
+.Card:hover {
+    transform: translateY(-10px); /* Move o card para cima */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
+}
+/* Ajusta a área onde a imagem será colocada */
+.Card-Image1 {
+    width: 100%; /* Agora ocupa toda a largura do card */
+    height: 200px; /* Ajuste conforme necessário */
+    margin: 0; /* Remove margens desnecessárias */
+    margin-bottom: 20px;
+}
+
+/* Faz a imagem ocupar todo o espaço da área */
+.Card-Image1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o espaço */
+    border-radius: 0px; /* Remove arredondamento que pode estar causando bordas */
+    display: block;
+}
+
+@media (max-width: 768px) { 
+    .Services-Cards {
+        flex-direction: column; /* Mantém os cards um abaixo do outro */
+        align-items: center; /* Centraliza os cards na tela */
+        gap: 3rem; /* Aumenta o espaçamento entre os cards */
+        z-index: 1;
+    }
+
+    .Card {
+        width: 75%; /* Reduz a largura dos cards */
+        max-width: 300px; /* Define um limite máximo para os cards */
+        margin-top: -30px; /* Ajuste fino para manter a sobreposição */
+        z-index: 2;
+    }
 }

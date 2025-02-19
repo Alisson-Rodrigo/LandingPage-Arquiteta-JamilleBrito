@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Reset bï¿½sico */
 * {
     margin: 0;
     padding: 0;
@@ -110,10 +110,10 @@ body {
     border-radius: 8px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    margin-top: -100px; /* Faz a seção subir */
+    margin-top: -100px; /* Faz a seï¿½ï¿½o subir */
     position: relative; /* Garante que ela seja desenhada acima da anterior */
-    z-index: 2; /* Aumenta a prioridade na pilha de sobreposição */
-    background: white; /* Garante que o fundo não fique transparente */
+    z-index: 2; /* Aumenta a prioridade na pilha de sobreposiï¿½ï¿½o */
+    background: white; /* Garante que o fundo nï¿½o fique transparente */
 }
 
     .feature-card:hover {
@@ -176,10 +176,10 @@ body {
 
     .feature-card {
         width: 80%; /* Faz os cards ocuparem 80% da tela em telas menores */
-        max-width: 400px; /* Define um tamanho máximo para não ficarem muito grandes */
-        margin-top: 0px; /* Faz a seção subir */
+        max-width: 400px; /* Define um tamanho mï¿½ximo para nï¿½o ficarem muito grandes */
+        margin-top: 0px; /* Faz a seï¿½ï¿½o subir */
         position: relative; /* Garante que ela seja desenhada acima da anterior */
-        z-index: 1; /* Aumenta a prioridade na pilha de sobreposição */
-        background: white; /* Garante que o fundo não fique transparente */
+        z-index: 1; /* Aumenta a prioridade na pilha de sobreposiï¿½ï¿½o */
+        background: white; /* Garante que o fundo nï¿½o fique transparente */
     }
 }
