@@ -1,4 +1,68 @@
-.f{
-    background-color: aqua;
-    color: violet;
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Seção Hero */
+#hero {
+    background: url('../images/hero.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+    /* Overlay escuro para melhorar legibilidade */
+    #hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Efeito escurecido */
+        z-index: 1;
+    }
+
+/* Conteúdo centralizado */
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+    .hero-content h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #c9a173; /* Cor semelhante ao tom dourado */
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+        font-weight: lighter;
+    }
+
+/* Botão */
+.btn-portfolio {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .btn-portfolio:hover {
+        background: white;
+        color: black;
+    }
