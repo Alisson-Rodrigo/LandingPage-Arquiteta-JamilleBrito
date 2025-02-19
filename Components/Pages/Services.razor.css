@@ -1,0 +1,17 @@
+.Services_Cards {
+    display: flex;
+    gap: 1rem;
+   text-align: center;
+}
+
+.Card {
+    flex: 1;
+    background-color: #f8f8f8;
+    padding: 1rem;
+    border-radius: 4px;
+    flex-direction: row;
+    text-align: center;
+}
+.Services{
+    text-align: center;
+}
