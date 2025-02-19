@@ -39,7 +39,6 @@ jobs:
           script: |
             cd /home/ubuntu/projects/LandingPage-Arquiteta-JamilleBrito
             git pull origin master || true
-            rm -rf obj
             dotnet publish LandingPage-Arquiteta-JamilleBrito.csproj -c Release -o publish
             sudo rm -rf /var/www/Landingpage-Jamille/*
             sudo cp -r publish/* /var/www/Landingpage-Jamille/
