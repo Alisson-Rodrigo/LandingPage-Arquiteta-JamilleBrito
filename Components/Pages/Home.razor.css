@@ -1,4 +1,185 @@
-.f{
-    background-color: aqua;
-    color: violet;
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+#hero {
+    position: relative;
+    width: 100%;
+    height: 120vh;
+    overflow: hidden;
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1); 
+    transition: opacity 1.5s ease-in-out, transform 5s ease-in-out; 
+}
+
+    .slide.active {
+        opacity: 1;
+        transform: scale(1.1); 
+    }
+
+
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 100%;
+}
+
+    .hero-content h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #c9a173;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+        font-weight: lighter;
+    }
+
+.btn-portfolio {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .btn-portfolio:hover {
+        background: white;
+        color: black;
+    }
+
+
+
+    /*----------------SEGUNDA SECTION--------------*/
+#features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+    background-color: #fff;
+    flex-wrap: wrap; /* Permite que os cards quebrem linha quando a tela for menor */
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    width: 359px;
+    height: 255px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-top: -100px; /* Faz a seção subir */
+    position: relative; /* Garante que ela seja desenhada acima da anterior */
+    z-index: 2; /* Aumenta a prioridade na pilha de sobreposição */
+    background: white; /* Garante que o fundo não fique transparente */
+}
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature-card .icon {
+        width: 70px;
+        height: 70px;
+        background: black;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: -50px auto 20px auto;
+    }
+
+        .feature-card .icon img {
+            width: 40px;
+            height: 40px;
+            filter: invert(1); 
+        }
+
+    .feature-card h3 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .feature-card.dark {
+        background: #181818;
+        color: white;
+    }
+
+        .feature-card.dark .icon {
+            background: white;
+        }
+
+            .feature-card.dark .icon img {
+                filter: invert(0); 
+            }
+
+        .feature-card.dark p {
+            color: #ddd;
+        }
+
+
+
+@media (max-width: 900px) {
+    #features {
+        flex-direction: column;
+        align-items: center; /* Centraliza os cards ao quebrar linha */
+    }
+
+    .feature-card {
+        width: 80%; /* Faz os cards ocuparem 80% da tela em telas menores */
+        max-width: 400px; /* Define um tamanho máximo para não ficarem muito grandes */
+        margin-top: 0px; /* Faz a seção subir */
+        position: relative; /* Garante que ela seja desenhada acima da anterior */
+        z-index: 1; /* Aumenta a prioridade na pilha de sobreposição */
+        background: white; /* Garante que o fundo não fique transparente */
+    }
 }
