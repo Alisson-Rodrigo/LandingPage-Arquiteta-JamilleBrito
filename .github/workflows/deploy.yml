@@ -1,3 +1,4 @@
+
 name: Deploy Landing Page Jamille
 
 on:
@@ -13,17 +14,13 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Mark repository as safe
-        run: git config --global --add safe.directory $GITHUB_WORKSPACE
-
       - name: Set up .NET
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '8.0.x'
 
       - name: Publish Application
-        working-directory: ./LandingPage-Arquiteta-JamilleBrito
-        run: dotnet publish LandingPage-Arquiteta-JamilleBrito.csproj -c Release -o publish
+        run: dotnet publish -c Release -o publish
 
       - name: Deploy to VPS via SSH
         uses: appleboy/ssh-action@master
@@ -34,8 +31,9 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}            # Porta SSH (geralmente "22")
           script: |
             cd /home/ubuntu/projects/LandingPage-Arquiteta-JamilleBrito
+            # Atualiza o repositório, se ele estiver clonado na VPS
             git pull origin master || true
-            dotnet publish LandingPage-Arquiteta-JamilleBrito.csproj -c Release -o publish
+            dotnet publish -c Release -o publish
             sudo rm -rf /var/www/Landingpage-Jamille/*
             sudo cp -r publish/* /var/www/Landingpage-Jamille/
             sudo chown -R www-data:www-data /var/www/Landingpage-Jamille
