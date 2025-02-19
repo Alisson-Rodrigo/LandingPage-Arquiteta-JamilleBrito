@@ -1,7 +1,7 @@
 .Services_Cards {
     display: flex;
     gap: 1rem;
-    /* Ajuste de acordo com o layout desejado */
+   text-align: center;
 }
 
 .Card {
@@ -10,5 +10,8 @@
     padding: 1rem;
     border-radius: 4px;
     flex-direction: row;
+    text-align: center;
+}
+.Services{
     text-align: center;
 }
