@@ -63,8 +63,9 @@
 }
 
     .btn-read-more:hover {
-        background: #c9a173;
-        color: white;
+        background: #fff;
+        color: black;
+        border: 1px solid black;
     }
 
 .about-image {
@@ -85,7 +86,6 @@
     background: #EBEBEB;
     padding: 20px;
     max-width: 300px;
-    border-radius: 8px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     border-color: #c9a173;
 }
@@ -102,6 +102,14 @@
         font-size: 0.9rem;
         color: black;
     }
+
+@media (max-width: 1200px) {
+    .testimonial-box {
+        position: relative;
+        left: 0;
+        margin: 20px auto;
+    }
+}
 
 @media (max-width: 900px) {
     .about-container {
