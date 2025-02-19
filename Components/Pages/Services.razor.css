@@ -1,17 +1,10 @@
-.Services_Cards {
-    display: flex;
-    gap: 1rem;
-   text-align: center;
+.Services{
+    margin-top: 4rem;
+    background-image: url("images/services-back.jpg");
+    
 }
 
-.Card {
-    flex: 1;
-    background-color: #f8f8f8;
-    padding: 1rem;
-    border-radius: 4px;
-    flex-direction: row;
-    text-align: center;
-}
-.Services{
+.Services-Header{
+    color: white;
     text-align: center;
 }
