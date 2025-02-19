@@ -1,10 +1,104 @@
-.Services{
-    margin-top: 4rem;
+.Services {
+    margin-top: 0; /* Remove qualquer margem superior */
+    padding-top: 0; /* Remove qualquer espaçamento interno no topo */
+    position: relative;
+    width: 100%;
+    height: 55vh; /* Ajuste conforme necessário */
     background-image: url("images/services-back.jpg");
-    
+    background-size: cover;
+    background-position: center top; /* Mantém a imagem no topo */
+    background-repeat: no-repeat;
 }
 
-.Services-Header{
-    color: white;
+
+
+
+/* Centralizar o título e subtítulo */
+.Services-Header {
+    padding-top: 100px ;
     text-align: center;
+    color: white;
+}
+
+/* Área onde as imagens ficarão sobre o fundo */
+.Services-Images {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+
+
+/* Os cards devem ficar FORA do fundo */
+.Cards-Wrapper {
+    background-color: white;
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+/* Organizando os cards fora do fundo */
+
+/* Ajuste global para os cards */
+.Services-Cards {
+    display: flex;
+    justify-content: center;
+    gap: 3rem; /* Aumenta o espaçamento entre os cards */
+}
+
+
+
+
+.Card {
+    width: 400px; /* Mantém a largura do card */
+    height: 500px; /* Aumenta a altura do card */
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Mantém o layout vertical */
+    margin-top: -200px;
+    z-index: 2;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animação suave */
+}
+
+/* Efeito ao passar o mouse */
+.Card:hover {
+    transform: translateY(-10px); /* Move o card para cima */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Adiciona um efeito de sombra mais forte */
+}
+
+/* Ajusta a área onde a imagem será colocada */
+.Card-Image1 {
+    width: 100%; /* Agora ocupa toda a largura do card */
+    height: 200px; /* Ajuste conforme necessário */
+    margin: 0; /* Remove margens desnecessárias */
+    margin-bottom: 20px;
+}
+
+/* Faz a imagem ocupar todo o espaço da área */
+.Card-Image1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o espaço */
+    border-radius: 0px; /* Remove arredondamento que pode estar causando bordas */
+    display: block;
+}
+
+@media (max-width: 768px) { 
+    .Services-Cards {
+        flex-direction: column; /* Mantém os cards um abaixo do outro */
+        align-items: center; /* Centraliza os cards na tela */
+        gap: 3rem; /* Aumenta o espaçamento entre os cards */
+        z-index: 1;
+    }
+
+    .Card {
+        width: 75%; /* Reduz a largura dos cards */
+        max-width: 300px; /* Define um limite máximo para os cards */
+        margin-top: -30px; /* Ajuste fino para manter a sobreposição */
+        z-index: 2;
+    }
 }
