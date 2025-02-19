@@ -22,8 +22,9 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Publish Application
-        working-directory: ./LandingPage-Arquiteta-JamilleBrito
+        working-directory: .
         run: dotnet publish -c Release -o publish
+
 
       - name: Deploy to VPS via SSH
         uses: appleboy/ssh-action@master
