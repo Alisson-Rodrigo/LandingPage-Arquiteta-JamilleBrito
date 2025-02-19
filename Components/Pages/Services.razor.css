@@ -61,6 +61,13 @@
     flex-direction: column; /* Mantém o layout vertical */
     margin-top: -200px;
     z-index: 2;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animação suave */
+}
+
+/* Efeito ao passar o mouse */
+.Card:hover {
+    transform: translateY(-10px); /* Move o card para cima */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Adiciona um efeito de sombra mais forte */
 }
 
 /* Ajusta a área onde a imagem será colocada */
