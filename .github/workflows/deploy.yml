@@ -21,10 +21,6 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Clean Project (remove obj folder)
-        working-directory: ./LandingPage-Arquiteta-JamilleBrito
-        run: rm -rf obj
-
       - name: Publish Application
         working-directory: ./LandingPage-Arquiteta-JamilleBrito
         run: dotnet publish LandingPage-Arquiteta-JamilleBrito.csproj -c Release -o publish
