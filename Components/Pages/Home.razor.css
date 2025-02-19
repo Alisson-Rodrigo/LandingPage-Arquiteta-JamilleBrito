@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +8,6 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-/* Seção Hero */
 #hero {
     background: url('../images/hero.jpg') center/cover no-repeat;
     height: 100vh;
@@ -21,7 +19,6 @@ body {
     position: relative;
 }
 
-    /* Overlay escuro para melhorar legibilidade */
     #hero::before {
         content: "";
         position: absolute;
@@ -29,11 +26,10 @@ body {
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5); /* Efeito escurecido */
+        background: rgba(0, 0, 0, 0.5); 
         z-index: 1;
     }
 
-/* Conteúdo centralizado */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -42,7 +38,7 @@ body {
     .hero-content h1 {
         font-size: 3rem;
         font-weight: bold;
-        color: #c9a173; /* Cor semelhante ao tom dourado */
+        color: #c9a173; 
     }
 
     .hero-content h2 {
@@ -50,7 +46,6 @@ body {
         font-weight: lighter;
     }
 
-/* Botão */
 .btn-portfolio {
     margin-top: 20px;
     padding: 12px 24px;
