@@ -3,15 +3,16 @@
     padding-top: 0;
     position: relative;
     width: 100%;
-    height: 55vh;
+    height: 55vh; /* Define uma altura para a seção */
+    overflow: hidden;
     background-image: url("images/services-back.jpg");
-    background-size: 110%;
-    background-position: center top;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    overflow: hidden; /* Garante que nada ultrapasse os limites */
+    background-attachment: fixed; /* Mantém a imagem fixa */
 }
 
-/* Criando overlay escuro APENAS sobre a imagem de fundo */
+/* Criando um overlay escuro sobre a imagem de fundo */
 .Services::before {
     content: "";
     position: absolute;
@@ -19,9 +20,36 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Ajuste a opacidade conforme necessário */
+    background-color: rgba(0, 0, 0, 0.6); /* Ajuste a opacidade conforme necessário */
+    z-index: 0; /* Mantém a camada escura no fundo */
+}
+
+/* Mantém o texto e os elementos acima da camada escura */
+.Services-Header, .Services-Cards {
+    position: relative;
+    z-index: 1; /* Mantém o conteúdo acima da sobreposição */
+}
+
+
+/* Criando um overlay escuro sobre a imagem de fundo */
+.Services::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Ajuste a opacidade para escurecer mais ou menos */
     z-index: 0; /* Mantém no fundo */
 }
+
+/* Mantém o texto e os elementos acima da camada escura */
+.Services-Header, .Services-Cards {
+    position: relative;
+    z-index: 1; /* Mantém o conteúdo acima da sobreposição */
+}
+
+
 
 /* Mantém o texto visível acima do overlay */
 .Services-Header {
@@ -39,7 +67,7 @@
 
 /* Centralizar o título e subtítulo */
 .Services-Header {
-    padding-top: 100px ;
+    padding-top: 140px ;
     text-align: center;
     color: white;
 }
@@ -73,43 +101,43 @@
 
 
 
-/* Animação ao passar o mouse no card */
 .Card {
-    width: 400px;
-    height: 500px;
+    width: 350px;  /* Reduz apenas a largura */
+    height: 500px; /* Mantém a altura original */
     text-align: center;
     background-color: white;
-    border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     margin-top: -200px;
     z-index: 2;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Efeito no Card ao passar o mouse */
-.Card:hover {
-    transform: translateY(-10px); /* Move o card para cima */
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
-}
+
 /* Ajusta a área onde a imagem será colocada */
 .Card-Image1 {
-    width: 100%; /* Agora ocupa toda a largura do card */
-    height: 200px; /* Ajuste conforme necessário */
-    margin: 0; /* Remove margens desnecessárias */
-    margin-bottom: 20px;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
 }
 
 /* Faz a imagem ocupar todo o espaço da área */
 .Card-Image1 img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a imagem preencha o espaço */
-    border-radius: 0px; /* Remove arredondamento que pode estar causando bordas */
+    object-fit: cover;
+    border-radius: 0px;
     display: block;
+    transition: transform 0.5s ease-in-out; /* Adiciona transição suave */
 }
+
+/* Aplica o efeito apenas na imagem ao passar o mouse no Card */
+.Card:hover .Card-Image1 img {
+    transform: scale(1.2); /* Aplica um leve zoom na imagem */
+}
+
 
 @media (max-width: 768px) { 
     .Services-Cards {
@@ -125,4 +153,23 @@
         margin-top: -30px; /* Ajuste fino para manter a sobreposição */
         z-index: 2;
     }
+}
+
+
+.Button-Services {
+    color: white;
+    margin-top: 40px;
+    height: 50px;
+    width: 200px;
+    background-color: #292929;
+    border: none;
+    border-radius: 5px; /* Suaviza as bordas */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Transição suave */
+}
+
+.Button-Services:hover {
+    background-color: #4e4e4e;
+    color: white;
+    
 }
