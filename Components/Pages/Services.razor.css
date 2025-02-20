@@ -1,16 +1,3 @@
-.Services {
-    margin-top: 50px;
-    padding-top: 0;
-    position: relative;
-    width: 100%;
-    height: 55vh; /* Define uma altura para a seção */
-    overflow: hidden;
-    background-image: url("images/services-back.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Mantém a imagem fixa */
-}
 
 /* Criando um overlay escuro sobre a imagem de fundo */
 .Services::before {
