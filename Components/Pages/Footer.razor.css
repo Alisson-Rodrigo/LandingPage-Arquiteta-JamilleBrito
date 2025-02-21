@@ -1,8 +1,8 @@
 /* Estilização geral do footer */
 .footer {
-    background-color: #4E4E4E; /* Cor de fundo do footer */
+    background-color: #181818; /* Cor de fundo */
     color: white;
-    padding: 30px 0;
+    padding: 40px 0;
     font-family: Arial, sans-serif;
 }
 
@@ -18,23 +18,32 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: flex-start; /* Mantém as colunas alinhadas ao topo */
 }
 
 /* Estilização das colunas */
 .footer-column {
     flex: 1;
-    min-width: 220px;
+    min-width: 280px; /* Mantém um tamanho mínimo */
     margin: 10px;
+    text-align: left; /* Alinha os textos à esquerda */
+}
+
+/* Evita que o conteúdo se espalhe demais */
+.footer-column p, 
+.footer-column ul {
+    margin: 0;
+    padding: 0;
 }
 
 /* Estilização dos títulos */
 .footer-column h4 {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 15px;
     font-weight: bold;
 }
 
-/* Estilização da lista de produtos */
+/* Estilização da lista */
 .footer-column ul {
     list-style: none;
     padding: 0;
@@ -53,42 +62,28 @@
     text-decoration: underline;
 }
 
-/* Estilização dos ícones sociais */
-.social-icons {
-    display: flex;
-    gap: 10px;
-}
-
-.social-icons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    color: white;
-    font-size: 18px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.social-icons a:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
 /* Responsividade */
+@media (max-width: 1024px) {
+    .row {
+        flex-wrap: wrap;
+        justify-content: center; /* Centraliza os elementos */
+    }
+
+    .footer-column {
+        flex: 1 1 40%; /* Faz com que cada coluna ocupe metade do espaço disponível */
+        min-width: 250px;
+    }
+}
+
 @media (max-width: 768px) {
     .row {
-        flex-direction: column;
+        flex-direction: column; /* Empilha os itens apenas em telas pequenas */
         text-align: center;
     }
 
-    .social-icons {
-        justify-content: center;
+    .footer-column {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
     }
-}
-
-.footer-column{
-    align-items: start;
 }
