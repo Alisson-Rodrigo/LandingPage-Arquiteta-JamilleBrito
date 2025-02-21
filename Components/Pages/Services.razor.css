@@ -10,6 +10,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed; /* Mantém a imagem fixa */
+   
 }
 
 /* Criando um overlay escuro sobre a imagem de fundo */
@@ -67,7 +68,7 @@
 
 /* Centralizar o título e subtítulo */
 .Services-Header {
-    padding-top: 140px ;
+    padding-top: 50px ;
     text-align: center;
     color: white;
 }
@@ -87,6 +88,7 @@
     background-color: white;
     padding: 0px;
     margin-bottom: 0px;
+    
 }
 
 /* Organizando os cards fora do fundo */
@@ -102,8 +104,8 @@
 
 
 .Card {
-    width: 350px;  /* Reduz apenas a largura */
-    height: 500px; /* Mantém a altura original */
+    width: 300px;  /* Reduz apenas a largura */
+    height: 550px; /* Mantém a altura original */
     text-align: center;
     background-color: white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -112,6 +114,8 @@
     flex-direction: column;
     margin-top: -200px;
     z-index: 2;
+    margin-bottom: 50px;
+    
 }
 
 
@@ -142,18 +146,46 @@
 @media (max-width: 768px) { 
     .Services-Cards {
         flex-direction: column; /* Mantém os cards um abaixo do outro */
-        align-items: center; /* Centraliza os cards na tela */
-        gap: 3rem; /* Aumenta o espaçamento entre os cards */
-        z-index: 1;
+        align-items: center; /* Centraliza os cards */
+        gap: 4rem; /* Espaçamento entre os cards */
     }
 
     .Card {
-        width: 75%; /* Reduz a largura dos cards */
-        max-width: 300px; /* Define um limite máximo para os cards */
-        margin-top: -30px; /* Ajuste fino para manter a sobreposição */
-        z-index: 2;
+        width: 75%; /* Mantém os cards menores para responsividade */
+        max-width: 300px; /* Mantém um limite máximo */
+        margin-bottom: 12rem !important;/* Mantém o espaçamento entre os cards */
+        z-index: 2; /* Garante que fiquem sobrepostos */
+    }
+
+    .Card:first-child {
+        margin-top: -200px; 
+        margin-bottom: 12rem !important; /* Garante espaçamento entre os cards */
     }
 }
+
+@media (max-width: 1200px) { /* Ajuste para zoom de 125% */
+    .Services {
+        height: auto;
+        padding-bottom: 220px; /* Adiciona mais espaço abaixo */
+    }
+
+    .Services-Header {
+        padding-top: 100px;
+    }
+
+    .Services-Cards {
+        flex-direction: column; /* Faz os cards virarem coluna */
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .Card {
+        width: 80%; /* Aumenta um pouco a largura */
+        max-width: 400px;
+        margin-bottom: 4rem;
+    }
+}
+
 
 
 .Button-Services {
