@@ -1,0 +1,127 @@
+#how-we-work {
+    padding: 60px 10%;
+    background-color: #f5f5f5; 
+    text-align: center;
+}
+
+.work-container h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.work-container p {
+    font-size: 1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.work-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.work-step {
+    width: 30%;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+}
+
+    .work-step h1 {
+        font-size: 4rem;
+        color: rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+
+    .work-step h3 {
+        font-size: 1.2rem;
+        color: #333;
+        margin-top: 20px;
+    }
+
+    .work-step p {
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+/* Seção de Avaliações (dentro da Work) */
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 40px auto 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+    background-color: #f5f5f5; /* Cinza claro baseado na imagem */
+}
+
+/* Card de Avaliação */
+.review-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+    .review-card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Ícones de Usuário */
+    .review-card i {
+        font-size: 2rem;
+        color: #000;
+        margin-bottom: 10px;
+    }
+
+    /* Nome da Pessoa */
+    .review-card h3 {
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+/* Estrelas */
+.stars {
+    color: #FFD700; /* Dourado para as estrelas */
+    font-size: 1.3rem;
+}
+
+/* Texto da Avaliação */
+.review-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 10px 0;
+}
+
+/* Data da Avaliação */
+.review-date {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .work-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .work-step {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .reviews-container {
+        grid-template-columns: 1fr;
+    }
+}

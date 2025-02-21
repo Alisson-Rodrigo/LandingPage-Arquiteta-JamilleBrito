@@ -1,0 +1,104 @@
+/* Seção de Contato */
+#contact {
+    padding: 60px 10%;
+    background: #ffffff; /* Branco */
+    width: 100%;
+    margin: 0;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    background: #ffffff; /* Branco */
+    padding: 40px;
+    border-radius: 10px;
+}
+
+/* Lado Esquerdo - Informações de Contato */
+.contact-info {
+    width: 45%;
+    color: #333; /* Preto suave */
+}
+
+    .contact-info h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #C9A173; /* Preto escuro */
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        color: #555; /* Cinza escuro */
+    }
+
+/* Ícones de Redes Sociais */
+.social-icons {
+    margin-top: 20px;
+}
+
+    .social-icons i {
+        font-size: 1.2rem;
+        margin-right: 10px;
+        color: #666; /* Cinza escuro */
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+        .social-icons i:hover {
+            color: #000; /* Preto ao passar o mouse */
+        }
+
+/* Lado Direito - Formulário */
+.contact-form {
+    width: 50%;
+    background: #e0e0e0; /* Cinza médio */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: none;
+        border-bottom: 2px solid #aaa;
+        background: transparent;
+        font-size: 1rem;
+        color: #333;
+        outline: none;
+    }
+
+    .contact-form textarea {
+        height: 100px;
+        resize: none;
+    }
+
+    .contact-form button {
+        width: 100%;
+        padding: 12px;
+        background: #444; /* Cinza escuro */
+        color: white;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+        .contact-form button:hover {
+            background: #222; /* Preto */
+        }
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+    }
+}
