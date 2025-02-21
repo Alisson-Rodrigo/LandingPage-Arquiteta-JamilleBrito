@@ -1,0 +1,126 @@
+/* Seção Projetos */
+#projects {
+    padding: 80px 10%;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Texto do Título */
+.text-projects h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.text-projects p {
+    font-size: 1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* Botões de Filtro */
+.options-projects nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+    .options-projects nav ul li {
+        display: inline-block;
+    }
+
+        .options-projects nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+            .options-projects nav ul li a.active,
+            .options-projects nav ul li a:hover {
+                background: black;
+                color: white;
+            }
+
+/* Grid de Imagens */
+.grid-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 5px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .image-container:hover img {
+        transform: scale(1.05);
+    }
+
+/* Overlay (efeito ao passar o mouse) */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    padding: 20px;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-size: 1rem;
+    max-width: 80%;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .grid-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-images {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .options-projects nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
