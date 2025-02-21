@@ -1,15 +1,20 @@
+/* Seção Sobre */
 #about {
     padding: 80px 10%;
     background-color: #fff;
 }
 
+/* Container principal */
 .about-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza */
 }
 
+/* Texto */
 .about-text {
     flex: 1;
     max-width: 600px;
@@ -36,6 +41,7 @@
         line-height: 1.6;
     }
 
+/* Assinatura */
 .signature {
     margin-top: 20px;
 }
@@ -51,6 +57,7 @@
     color: #333;
 }
 
+/* Botão */
 .btn-read-more {
     margin-top: 20px;
     padding: 12px 24px;
@@ -68,26 +75,30 @@
         border: 1px solid black;
     }
 
+/* Imagem */
 .about-image {
     flex: 1;
     position: relative;
+    text-align: center;
 }
 
     .about-image img {
         width: 100%;
-        max-width: 900px;
+        max-width: 500px; /* Evita que a imagem fique muito grande */
         border-radius: 8px;
     }
 
+/* Caixa de Depoimento */
 .testimonial-box {
     position: absolute;
-    bottom: -70px;
-    left: -250px;
+    bottom: -150px; /* Ajustei a posição */
+    left: 50%;
+    transform: translateX(-50%); /* Mantém centralizado */
     background: #EBEBEB;
     padding: 20px;
     max-width: 300px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    border-color: #c9a173;
+    border-left: 5px solid #c9a173;
 }
 
     .testimonial-box p {
@@ -103,10 +114,13 @@
         color: black;
     }
 
+/* Responsividade */
 @media (max-width: 1200px) {
     .testimonial-box {
         position: relative;
         left: 0;
+        bottom: 0;
+        transform: none;
         margin: 20px auto;
     }
 }
@@ -129,7 +143,8 @@
     .testimonial-box {
         position: relative;
         left: 0;
+        bottom: 0;
+        transform: none;
         margin: 20px auto;
     }
 }
-
