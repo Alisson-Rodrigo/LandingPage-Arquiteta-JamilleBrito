@@ -151,8 +151,8 @@
     }
 
     .Card {
-        width: 75%; /* Mantém os cards menores para responsividade */
-        max-width: 300px; /* Mantém um limite máximo */
+        width: 250px !important;/* Mantém os cards menores para responsividade */
+        max-width: 280px; /* Mantém um limite máximo */
         margin-bottom: 12rem !important;/* Mantém o espaçamento entre os cards */
         z-index: 2; /* Garante que fiquem sobrepostos */
     }
@@ -163,7 +163,7 @@
     }
 }
 
-@media (max-width: 1200px) { /* Ajuste para zoom de 125% */
+@media (max-width: 1300px) { /* Ajuste para zoom de 125% */
     .Services {
         height: auto;
         padding-bottom: 220px; /* Adiciona mais espaço abaixo */
