@@ -1,16 +1,26 @@
+/* Remover qualquer overflow lateral */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Impede rolagem lateral */
+}
+
 /* Estilização geral do footer */
 .footer {
-    background-color: #181818; /* Cor de fundo */
+    background-color: #181818;
     color: white;
     padding: 40px 0;
     font-family: Arial, sans-serif;
+    width: 100%; /* Garante que o footer ocupe toda a largura */
+    overflow-x: hidden; /* Evita rolagem lateral */
 }
 
-/* Container para organizar o layout */
+/* Container ajustado para não ultrapassar a tela */
 .container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 clamp(10px, 5%, 20px); /* Ajuste de padding responsivo */
 }
 
 /* Layout flexível para as colunas */
@@ -18,49 +28,50 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start; /* Mantém as colunas alinhadas ao topo */
+    align-items: flex-start;
+    width: 100%; /* Garante que não ultrapasse */
 }
 
 /* Estilização das colunas */
 .footer-column {
     flex: 1;
-    min-width: 280px; /* Mantém um tamanho mínimo */
+    min-width: 280px;
     margin: 10px;
-    text-align: left; /* Alinha os textos à esquerda */
+    text-align: left;
 }
 
-/* Evita que o conteúdo se espalhe demais */
-.footer-column p, 
-.footer-column ul {
-    margin: 0;
-    padding: 0;
-}
+    /* Evita espaçamentos errados */
+    .footer-column p,
+    .footer-column ul {
+        margin: 0;
+        padding: 0;
+    }
 
-/* Estilização dos títulos */
-.footer-column h4 {
-    font-size: 18px;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
+    /* Estilização dos títulos */
+    .footer-column h4 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
 
-/* Estilização da lista */
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-}
+    /* Estilização da lista */
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+    }
 
-.footer-column ul li {
-    margin-bottom: 10px;
-}
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
 
-.footer-column ul li a {
-    color: white;
-    text-decoration: none;
-}
+            .footer-column ul li a {
+                color: white;
+                text-decoration: none;
+            }
 
-.footer-column ul li a:hover {
-    text-decoration: underline;
-}
+                .footer-column ul li a:hover {
+                    text-decoration: underline;
+                }
 
 /* Responsividade */
 @media (max-width: 1024px) {
@@ -70,14 +81,14 @@
     }
 
     .footer-column {
-        flex: 1 1 40%; /* Faz com que cada coluna ocupe metade do espaço disponível */
+        flex: 1 1 40%;
         min-width: 250px;
     }
 }
 
 @media (max-width: 768px) {
     .row {
-        flex-direction: column; /* Empilha os itens apenas em telas pequenas */
+        flex-direction: column;
         text-align: center;
     }
 
