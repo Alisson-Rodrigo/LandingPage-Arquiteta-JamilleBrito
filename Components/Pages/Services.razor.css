@@ -324,3 +324,29 @@
 .close:hover {
     background: rgba(0, 0, 0, 0.8);
 }
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90vw;  /* Aumenta a largura para ocupar quase toda a tela */
+        height: auto; /* Permite que a altura se ajuste ao conteúdo */
+        max-height: 95vh; /* Garante que não ultrapasse a tela */
+        flex-direction: column;
+    }
+    .image-container {
+        height: 50%; /* Ajusta a proporção da área da imagem */
+    }
+    .modal-description {
+        height: auto;      /* Altura automática */
+        max-height: 40vh;  /* Limita a altura máxima */
+        padding: 10px;     /* Ajusta o espaçamento interno */
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 95vw;
+    }
+    .modal-description {
+        font-size: 14px;
+    }
+}
