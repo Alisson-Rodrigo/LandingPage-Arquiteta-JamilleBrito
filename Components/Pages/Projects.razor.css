@@ -28,25 +28,31 @@
     padding: 0;
 }
 
-    .options-projects nav ul li {
-        display: inline-block;
-    }
+.options-projects nav ul li {
+    display: inline-block;
+}
 
-        .options-projects nav ul li a {
-            text-decoration: none;
-            color: black;
-            font-size: 1rem;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: all 0.3s ease-in-out;
-        }
+/* Antes era .options-projects nav ul li a {...} */
+.options-projects nav ul li button {
+    /* Visual semelhante a um link, mas agora é um botão */
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
 
-            .options-projects nav ul li a.active,
-            .options-projects nav ul li a:hover {
-                background: black;
-                color: white;
-            }
+/* Estados "active" e hover */
+.options-projects nav ul li button.active,
+.options-projects nav ul li button:hover {
+    background: black;
+    color: white;
+}
 
 /* Grid de Imagens */
 .grid-images {
@@ -62,17 +68,17 @@
     border-radius: 5px;
 }
 
-    .image-container img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        border-radius: 5px;
-        transition: transform 0.3s ease-in-out;
-    }
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
 
-    .image-container:hover img {
-        transform: scale(1.05);
-    }
+.image-container:hover img {
+    transform: scale(1.05);
+}
 
 /* Overlay (efeito ao passar o mouse) */
 .overlay {

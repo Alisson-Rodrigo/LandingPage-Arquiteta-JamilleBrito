@@ -5,62 +5,111 @@
         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
     </div>
 
-    <div class="options-projects">
-        <nav>
-            <ul>
-                <li><a href="#" class="active">All</a></li>
-                <li><a href="#">Residential</a></li>
-                <li><a href="#">Corporate</a></li>
-                <li><a href="#">Restaurant</a></li>
-                <li><a href="#">Commercial</a></li>
-            </ul>
-        </nav>
+<div class="options-projects">
+    <nav>
+        <ul>
+            <li><button class="active">All</button></li>
+            <li><button>Residential</button></li>
+            <li><button>Corporate</button></li>
+            <li><button>Restaurant</button></li>
+            <li><button>Commercial</button></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="grid-images">
+    <!-- Residencial -->
+    <div class="image-container" data-category="residential" data-all="true">
+        <img src="images/residential1.jpg" alt="Residential Design">
+        <div class="overlay"><h3>Residential Design</h3><p>Far far away...</p></div>
+    </div>
+    <div class="image-container" data-category="residential">
+        <img src="images/residential2.jpg" alt="Living Room">
+        <div class="overlay"><h3>Living Room</h3><p>Far far away...</p></div>
+    </div>
+    <div class="image-container" data-category="residential">
+        <img src="images/residential3.jpg" alt="Bedroom">
+        <div class="overlay"><h3>Bedroom</h3><p>Far far away...</p></div>
+    </div>
+    <div class="image-container" data-category="residential">
+        <img src="images/residential4.jpg" alt="Bathroom">
+        <div class="overlay"><h3>Bathroom</h3><p>Far far away...</p></div>
+    </div>
+    <div class="image-container" data-category="residential">
+        <img src="images/residential5.jpg" alt="Kitchen">
+        <div class="overlay"><h3>Kitchen</h3><p>Far far away...</p></div>
+    </div>
+    <div class="image-container" data-category="residential">
+        <img src="images/residential6.jpg" alt="Apartment">
+        <div class="overlay"><h3>Apartment</h3><p>Far far away...</p></div>
     </div>
 
-    <div class="imagens-section">
-        <div class="grid-images">
-            <div class="image-container">
-                <img src="images/home2.jpg" alt="Residential Project" >
-                <div class="overlay">
-                    <h3>Residential Design</h3>
-                    <p>Far far away, behind the word mountains...</p>
-                </div>
-            </div>
-            <div class="image-container">
-                <img src="images/home2.jpg" alt="Corporate Project" >
-                <div class="overlay">
-                    <h3>Corporate Design</h3>
-                    <p>Far far away, behind the word mountains...</p>
-                </div>
-            </div>
-            <div class="image-container">
-                <img src="images/home2.jpg" alt="Kitchen Design">
-                <div class="overlay">
-                    <h3>Kitchen Design</h3>
-                    <p>Far far away, behind the word mountains...</p>
-                </div>
-            </div>
-            <div class="image-container">
-                <img src="images/home2.jpg" alt="Restaurant Design">
-                <div class="overlay">
-                    <h3>Restaurant Design</h3>
-                    <p>Far far away, behind the word mountains...</p>
-                </div>
-            </div>
-            <div class="image-container">
-                <img src="images/home2.jpg" alt="Dining Room">
-                <div class="overlay">
-                    <h3>Dining Room</h3>
-                    <p>Far far away, behind the word mountains...</p>
-                </div>
-            </div>
-            <div class="image-container">
-                <img src="images/home2.jpg" alt="Luxury Interior" >
-                <div class="overlay">
-                    <h3>Luxury Interior</h3>
-                    <p>Far far away, behind the word mountains...</p>
-                </div>
-            </div>
-        </div>
+    <!-- Corporate -->
+    <div class="image-container" data-category="corporate" data-all="true">
+        <img src="images/corporate1.jpg" alt="Corporate Office">
+        <div class="overlay"><h3>Corporate Office</h3><p>Far far away...</p></div>
     </div>
+    <div class="image-container" data-category="corporate">
+        <img src="images/corporate2.jpg" alt="Boardroom">
+        <div class="overlay"><h3>Boardroom</h3><p>Far far away...</p></div>
+    </div>
+    <div class="image-container" data-category="corporate">
+        <img src="images/corporate3.jpg" alt="Workstation">
+        <div class="overlay"><h3>Workstation</h3><p>Far far away...</p></div>
+    </div>
+    <div class="image-container" data-category="corporate">
+        <img src="images/corporate4.jpg" alt="Open Space">
+        <div class="overlay"><h3>Open Space</h3><p>Far far away...</p></div>
+    </div>
+    <div class="image-container" data-category="corporate">
+        <img src="images/corporate5.jpg" alt="Meeting Room">
+        <div class="overlay"><h3>Meeting Room</h3><p>Far far away...</p></div>
+    </div>
+    <div class="image-container" data-category="corporate">
+        <img src="images/corporate6.jpg" alt="Reception">
+        <div class="overlay"><h3>Reception</h3><p>Far far away...</p></div>
+    </div>
+</div>
+
+
 </section>
+<script>
+ document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".options-projects nav ul li button");
+    const images = document.querySelectorAll(".grid-images .image-container");
+
+    // Função para atualizar a exibição das imagens
+    function updateImages(category) {
+        images.forEach((img) => {
+            if (category === "all") {
+                // Se for "All", mostrar apenas as 6 imagens marcadas com data-all="true"
+                img.style.display = img.dataset.all === "true" ? "block" : "none";
+            } else {
+                // Se for uma categoria, mostrar todas as 6 imagens dessa categoria
+                img.style.display = img.dataset.category === category ? "block" : "none";
+            }
+        });
+    }
+
+    // Adiciona evento de clique a cada botão de categoria
+    buttons.forEach((button) => {
+        button.addEventListener("click", function () {
+            // Remove a classe "active" do botão anterior e adiciona ao botão atual
+            document.querySelector(".options-projects nav ul li button.active")?.classList.remove("active");
+            this.classList.add("active");
+
+            // Obtém a categoria correspondente ao botão clicado
+            const category = this.textContent.toLowerCase();
+
+            // Atualiza as imagens
+            updateImages(category);
+        });
+    });
+
+    // Inicializa a página mostrando exatamente 6 imagens no "All"
+    updateImages("all");
+});
+
+
+
+</script>
