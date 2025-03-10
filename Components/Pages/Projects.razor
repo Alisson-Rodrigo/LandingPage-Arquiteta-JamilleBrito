@@ -1,115 +1,117 @@
-﻿<!-- Seção Projetos -->
-<section id="projects">
+﻿<section id="projects">
     <div class="text-projects">
         <h2>LATEST PROJECTS</h2>
         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
     </div>
 
-<div class="options-projects">
-    <nav>
-        <ul>
-            <li><button class="active">All</button></li>
-            <li><button>Residential</button></li>
-            <li><button>Corporate</button></li>
-            <li><button>Restaurant</button></li>
-            <li><button>Commercial</button></li>
-        </ul>
-    </nav>
-</div>
-
-<div class="grid-images">
-    <!-- Residencial -->
-    <div class="image-container" data-category="residential" data-all="true">
-        <img src="images/residential1.jpg" alt="Residential Design">
-        <div class="overlay"><h3>Residential Design</h3><p>Far far away...</p></div>
-    </div>
-    <div class="image-container" data-category="residential">
-        <img src="images/residential2.jpg" alt="Living Room">
-        <div class="overlay"><h3>Living Room</h3><p>Far far away...</p></div>
-    </div>
-    <div class="image-container" data-category="residential">
-        <img src="images/residential3.jpg" alt="Bedroom">
-        <div class="overlay"><h3>Bedroom</h3><p>Far far away...</p></div>
-    </div>
-    <div class="image-container" data-category="residential">
-        <img src="images/residential4.jpg" alt="Bathroom">
-        <div class="overlay"><h3>Bathroom</h3><p>Far far away...</p></div>
-    </div>
-    <div class="image-container" data-category="residential">
-        <img src="images/residential5.jpg" alt="Kitchen">
-        <div class="overlay"><h3>Kitchen</h3><p>Far far away...</p></div>
-    </div>
-    <div class="image-container" data-category="residential">
-        <img src="images/residential6.jpg" alt="Apartment">
-        <div class="overlay"><h3>Apartment</h3><p>Far far away...</p></div>
+    <div class="options-projects">
+        <nav>
+            <ul>
+                @foreach (var cat in Categories)
+                {
+                    <li>
+                        <button class="@(cat.ToLower() == "all" ? "active" : "")">@cat</button>
+                    </li>
+                }
+            </ul>
+        </nav>
     </div>
 
-    <!-- Corporate -->
-    <div class="image-container" data-category="corporate" data-all="true">
-        <img src="images/corporate1.jpg" alt="Corporate Office">
-        <div class="overlay"><h3>Corporate Office</h3><p>Far far away...</p></div>
+    <div class="grid-images" id="gridImages">
+        @foreach (var image in ImageItems)
+        {
+            <div class="image-container" data-category="@image.Category">
+                <img src="@image.ImagePath" alt="@image.Title">
+                <div class="overlay">
+                    <h3>@image.Title</h3>
+                    <p>@image.Description</p>
+                </div>
+            </div>
+        }
     </div>
-    <div class="image-container" data-category="corporate">
-        <img src="images/corporate2.jpg" alt="Boardroom">
-        <div class="overlay"><h3>Boardroom</h3><p>Far far away...</p></div>
-    </div>
-    <div class="image-container" data-category="corporate">
-        <img src="images/corporate3.jpg" alt="Workstation">
-        <div class="overlay"><h3>Workstation</h3><p>Far far away...</p></div>
-    </div>
-    <div class="image-container" data-category="corporate">
-        <img src="images/corporate4.jpg" alt="Open Space">
-        <div class="overlay"><h3>Open Space</h3><p>Far far away...</p></div>
-    </div>
-    <div class="image-container" data-category="corporate">
-        <img src="images/corporate5.jpg" alt="Meeting Room">
-        <div class="overlay"><h3>Meeting Room</h3><p>Far far away...</p></div>
-    </div>
-    <div class="image-container" data-category="corporate">
-        <img src="images/corporate6.jpg" alt="Reception">
-        <div class="overlay"><h3>Reception</h3><p>Far far away...</p></div>
-    </div>
-</div>
-
-
 </section>
+
 <script>
  document.addEventListener("DOMContentLoaded", function () {
     const buttons = document.querySelectorAll(".options-projects nav ul li button");
     const images = document.querySelectorAll(".grid-images .image-container");
+    const grid = document.getElementById("gridImages");
 
-    // Função para atualizar a exibição das imagens
     function updateImages(category) {
-        images.forEach((img) => {
-            if (category === "all") {
-                // Se for "All", mostrar apenas as 6 imagens marcadas com data-all="true"
-                img.style.display = img.dataset.all === "true" ? "block" : "none";
-            } else {
-                // Se for uma categoria, mostrar todas as 6 imagens dessa categoria
-                img.style.display = img.dataset.category === category ? "block" : "none";
-            }
-        });
+        if (category === "all") {
+            // Adiciona classe se necessário e exibe todas as imagens
+            grid.classList.add("all-filter");
+            images.forEach((img) => {
+                img.style.display = "block";
+            });
+        } else {
+            // Remove a classe para usar grid fixo
+            grid.classList.remove("all-filter");
+            let count = 0;
+            images.forEach((img) => {
+                if (img.dataset.category === category && count < 4) {
+                    img.style.display = "block";
+                    count++;
+                } else {
+                    img.style.display = "none";
+                }
+            });
+        }
     }
 
-    // Adiciona evento de clique a cada botão de categoria
     buttons.forEach((button) => {
         button.addEventListener("click", function () {
-            // Remove a classe "active" do botão anterior e adiciona ao botão atual
             document.querySelector(".options-projects nav ul li button.active")?.classList.remove("active");
             this.classList.add("active");
-
-            // Obtém a categoria correspondente ao botão clicado
             const category = this.textContent.toLowerCase();
-
-            // Atualiza as imagens
             updateImages(category);
         });
     });
 
-    // Inicializa a página mostrando exatamente 6 imagens no "All"
+    // Inicializa a página com o filtro "All"
     updateImages("all");
 });
-
-
-
 </script>
+
+
+@code {
+    // Categorias: "All" e as 4 categorias reais
+    List<string> Categories = new() { "All", "Residential", "Corporate", "Restaurant", "Commercial" };
+
+    // Lista de imagens (projetos)
+    List<ImageItem> ImageItems = new List<ImageItem>
+    {
+        // Residential
+        new ImageItem { Category = "residential", ImagePath = "images/ABNER.jpeg", Title = "Residential Design", Description = "Far far away..." },
+        new ImageItem { Category = "residential", ImagePath = "images/ABNER.jpeg", Title = "Living Room", Description = "Far far away..." },
+        new ImageItem { Category = "residential", ImagePath = "images/ABNER.jpeg", Title = "Bedroom", Description = "Far far away..." },
+        new ImageItem { Category = "residential", ImagePath = "images/ABNER.jpeg", Title = "Bathroom", Description = "Far far away..." },
+        
+        // Corporate
+        new ImageItem { Category = "corporate", ImagePath = "images/home2.jpg", Title = "Corporate Office", Description = "Far far away..." },
+        new ImageItem { Category = "corporate", ImagePath = "images/home2.jpg", Title = "Boardroom", Description = "Far far away..." },
+        new ImageItem { Category = "corporate", ImagePath = "images/home2.jpg", Title = "Workstation", Description = "Far far away..." },
+        new ImageItem { Category = "corporate", ImagePath = "images/home2.jpg", Title = "Open Space", Description = "Far far away..." },
+        
+        
+        // Restaurant
+        new ImageItem { Category = "restaurant", ImagePath = "images/home3.jpg", Title = "Restaurant Ambience", Description = "Cozy and modern..." },
+        new ImageItem { Category = "restaurant", ImagePath = "images/restaurant2.jpg", Title = "Fine Dining", Description = "Elegant design..." },
+        new ImageItem { Category = "restaurant", ImagePath = "images/restaurant1.jpg", Title = "Casual Dining", Description = "Cozy vibes..." },
+        new ImageItem { Category = "restaurant", ImagePath = "images/restaurant2.jpg", Title = "Modern Eatery", Description = "Elegant design..." },
+
+        // Commercial
+        new ImageItem { Category = "commercial", ImagePath = "images/download.jpeg", Title = "Retail Store", Description = "Dynamic layout..." },
+        new ImageItem { Category = "commercial", ImagePath = "images/commercial2.jpg", Title = "Shopping Mall", Description = "Spacious and bright..." },
+        new ImageItem { Category = "commercial", ImagePath = "images/commercial1.jpg", Title = "Office Complex", Description = "Modern architecture..." },
+        new ImageItem { Category = "commercial", ImagePath = "images/commercial2.jpg", Title = "Business Center", Description = "Contemporary style..." },
+    };
+
+    public class ImageItem
+    {
+        public string Category { get; set; }
+        public string ImagePath { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+    }
+}
