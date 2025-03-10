@@ -32,9 +32,7 @@
     display: inline-block;
 }
 
-/* Antes era .options-projects nav ul li a {...} */
 .options-projects nav ul li button {
-    /* Visual semelhante a um link, mas agora é um botão */
     background: none;
     border: none;
     cursor: pointer;
@@ -47,31 +45,33 @@
     transition: all 0.3s ease-in-out;
 }
 
-/* Estados "active" e hover */
 .options-projects nav ul li button.active,
 .options-projects nav ul li button:hover {
     background: black;
     color: white;
 }
 
-/* Grid de Imagens */
+/* Grid de Imagens (sempre 4 colunas) */
 .grid-images {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2px;
     margin-top: 20px;
 }
 
+/* Container de cada imagem */
 .image-container {
     position: relative;
     overflow: hidden;
     border-radius: 5px;
+    /* Defina a altura que você desejar para os cards (exemplo: 250px) */
+    height: 250px;
 }
 
 .image-container img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem preencher todo o container */
     border-radius: 5px;
     transition: transform 0.3s ease-in-out;
 }
@@ -80,7 +80,7 @@
     transform: scale(1.05);
 }
 
-/* Overlay (efeito ao passar o mouse) */
+/* Overlay */
 .overlay {
     position: absolute;
     top: 0;
