@@ -94,6 +94,7 @@ body {
     /*----------------SEGUNDA SECTION--------------*/
 #features {
     display: flex;
+    opacity: 1 important;
     justify-content: center;
     gap: 20px;
     padding: 50px 20px;
