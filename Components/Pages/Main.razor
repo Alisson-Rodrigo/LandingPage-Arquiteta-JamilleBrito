@@ -1,9 +1,29 @@
 ﻿@page "/"
+@using BlazorAnimate
 
 <Home />
+
+<Animate Animation="Animations.FadeUp" Once="true" Duration="TimeSpan.FromSeconds(2)">
 <SobreMim />
+</Animate>
+
+<Animate Animation="Animations.FadeUp" Once="true" Duration="TimeSpan.FromSeconds(2)">
 <Services />
+</Animate>
+
+<Animate Animation="Animations.FadeUp" Once="true" Duration="TimeSpan.FromSeconds(2)">
 <Projects />
+</Animate>
+
+<Animate Animation="Animations.FadeUp" Once="true" Duration="TimeSpan.FromSeconds(2)">
 <Review />
+</Animate>
+
+<Animate Animation="Animations.FadeUp" Once="true" Duration="TimeSpan.FromSeconds(2)">
 <Contact />
+</Animate>
+
+<Animate Animation="Animations.FadeIn" Once="true" Duration="TimeSpan.FromSeconds(2)">
 <Footer />
+</Animate>
+

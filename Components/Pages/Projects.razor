@@ -1,5 +1,4 @@
-﻿<!-- Seção Projetos -->
-<section id="projects">
+﻿<section id="projects">
     <div class="text-projects">
         <h2>LATEST PROJECTS</h2>
         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
@@ -8,59 +7,111 @@
     <div class="options-projects">
         <nav>
             <ul>
-                <li><a href="#" class="active">All</a></li>
-                <li><a href="#">Residential</a></li>
-                <li><a href="#">Corporate</a></li>
-                <li><a href="#">Restaurant</a></li>
-                <li><a href="#">Commercial</a></li>
+                @foreach (var cat in Categories)
+                {
+                    <li>
+                        <button class="@(cat.ToLower() == "all" ? "active" : "")">@cat</button>
+                    </li>
+                }
             </ul>
         </nav>
     </div>
 
-    <div class="imagens-section">
-        <div class="grid-images">
-            <div class="image-container">
-                <img src="images/home2.jpg" alt="Residential Project" >
+    <div class="grid-images" id="gridImages">
+        @foreach (var image in ImageItems)
+        {
+            <div class="image-container" data-category="@image.Category">
+                <img src="@image.ImagePath" alt="@image.Title">
                 <div class="overlay">
-                    <h3>Residential Design</h3>
-                    <p>Far far away, behind the word mountains...</p>
+                    <h3>@image.Title</h3>
+                    <p>@image.Description</p>
                 </div>
             </div>
-            <div class="image-container">
-                <img src="images/home2.jpg" alt="Corporate Project" >
-                <div class="overlay">
-                    <h3>Corporate Design</h3>
-                    <p>Far far away, behind the word mountains...</p>
-                </div>
-            </div>
-            <div class="image-container">
-                <img src="images/home2.jpg" alt="Kitchen Design">
-                <div class="overlay">
-                    <h3>Kitchen Design</h3>
-                    <p>Far far away, behind the word mountains...</p>
-                </div>
-            </div>
-            <div class="image-container">
-                <img src="images/home2.jpg" alt="Restaurant Design">
-                <div class="overlay">
-                    <h3>Restaurant Design</h3>
-                    <p>Far far away, behind the word mountains...</p>
-                </div>
-            </div>
-            <div class="image-container">
-                <img src="images/home2.jpg" alt="Dining Room">
-                <div class="overlay">
-                    <h3>Dining Room</h3>
-                    <p>Far far away, behind the word mountains...</p>
-                </div>
-            </div>
-            <div class="image-container">
-                <img src="images/home2.jpg" alt="Luxury Interior" >
-                <div class="overlay">
-                    <h3>Luxury Interior</h3>
-                    <p>Far far away, behind the word mountains...</p>
-                </div>
-            </div>
-        </div>
+        }
     </div>
 </section>
+
+<script>
+ document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".options-projects nav ul li button");
+    const images = document.querySelectorAll(".grid-images .image-container");
+    const grid = document.getElementById("gridImages");
+
+    function updateImages(category) {
+        if (category === "all") {
+            // Adiciona classe se necessário e exibe todas as imagens
+            grid.classList.add("all-filter");
+            images.forEach((img) => {
+                img.style.display = "block";
+            });
+        } else {
+            // Remove a classe para usar grid fixo
+            grid.classList.remove("all-filter");
+            let count = 0;
+            images.forEach((img) => {
+                if (img.dataset.category === category && count < 4) {
+                    img.style.display = "block";
+                    count++;
+                } else {
+                    img.style.display = "none";
+                }
+            });
+        }
+    }
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", function () {
+            document.querySelector(".options-projects nav ul li button.active")?.classList.remove("active");
+            this.classList.add("active");
+            const category = this.textContent.toLowerCase();
+            updateImages(category);
+        });
+    });
+
+    // Inicializa a página com o filtro "All"
+    updateImages("all");
+});
+</script>
+
+
+@code {
+    // Categorias: "All" e as 4 categorias reais
+    List<string> Categories = new() { "All", "Residential", "Corporate", "Restaurant", "Commercial" };
+
+    // Lista de imagens (projetos)
+    List<ImageItem> ImageItems = new List<ImageItem>
+    {
+        // Residential
+        new ImageItem { Category = "residential", ImagePath = "images/ABNER.jpeg", Title = "Residential Design", Description = "Far far away..." },
+        new ImageItem { Category = "residential", ImagePath = "images/ABNER.jpeg", Title = "Living Room", Description = "Far far away..." },
+        new ImageItem { Category = "residential", ImagePath = "images/ABNER.jpeg", Title = "Bedroom", Description = "Far far away..." },
+        new ImageItem { Category = "residential", ImagePath = "images/ABNER.jpeg", Title = "Bathroom", Description = "Far far away..." },
+        
+        // Corporate
+        new ImageItem { Category = "corporate", ImagePath = "images/home2.jpg", Title = "Corporate Office", Description = "Far far away..." },
+        new ImageItem { Category = "corporate", ImagePath = "images/home2.jpg", Title = "Boardroom", Description = "Far far away..." },
+        new ImageItem { Category = "corporate", ImagePath = "images/home2.jpg", Title = "Workstation", Description = "Far far away..." },
+        new ImageItem { Category = "corporate", ImagePath = "images/home2.jpg", Title = "Open Space", Description = "Far far away..." },
+        
+        
+        // Restaurant
+        new ImageItem { Category = "restaurant", ImagePath = "images/home3.jpg", Title = "Restaurant Ambience", Description = "Cozy and modern..." },
+        new ImageItem { Category = "restaurant", ImagePath = "images/restaurant2.jpg", Title = "Fine Dining", Description = "Elegant design..." },
+        new ImageItem { Category = "restaurant", ImagePath = "images/restaurant1.jpg", Title = "Casual Dining", Description = "Cozy vibes..." },
+        new ImageItem { Category = "restaurant", ImagePath = "images/restaurant2.jpg", Title = "Modern Eatery", Description = "Elegant design..." },
+
+        // Commercial
+        new ImageItem { Category = "commercial", ImagePath = "images/download.jpeg", Title = "Retail Store", Description = "Dynamic layout..." },
+        new ImageItem { Category = "commercial", ImagePath = "images/commercial2.jpg", Title = "Shopping Mall", Description = "Spacious and bright..." },
+        new ImageItem { Category = "commercial", ImagePath = "images/commercial1.jpg", Title = "Office Complex", Description = "Modern architecture..." },
+        new ImageItem { Category = "commercial", ImagePath = "images/commercial2.jpg", Title = "Business Center", Description = "Contemporary style..." },
+    };
+
+    public class ImageItem
+    {
+        public string Category { get; set; }
+        public string ImagePath { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+    }
+}

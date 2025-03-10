@@ -205,3 +205,147 @@
     color: white;
     
 }
+
+/* Fundo escuro com desfoque */
+.modal {
+    display: none; /* Esconde o modal por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+    backdrop-filter: blur(8px); /* Aplica desfoque no fundo */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Ajustando a estrutura do modal */
+.modal-content {
+    width: 50vw; /* Mantém a largura da modal */
+    height: 90vh; /* Mantém a altura do modal */
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Ajustando a imagem dentro do modal */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 60%; /* Mantém 60% do modal para a imagem */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantém a proporção correta */
+}
+
+/* Posicionamento das setas dentro da imagem */
+.arrows {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+/* Estilo das setas */
+.arrow {
+    cursor: pointer;
+    font-size: 28px;
+    padding: 12px;
+    
+    color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.arrow:hover {
+  
+}
+
+/* Estilizando a descrição */
+.modal-description {
+    width: 90%;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    color: #333;
+    overflow-y: auto;
+    height: 30%; /* Ocupar 30% da modal */
+}
+
+/* Estilizando o título do projeto */
+.modal-description h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Estilizando o texto */
+.modal-description p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+/* Botão de fechar no canto superior direito */
+/* Botão de fechar no canto superior direito */
+/* Botão de fechar no canto superior direito */
+.close {
+    position: absolute;
+    top: 0px;  /* Ajusta a posição superior */
+    right: 0px; /* Mantém no canto direito */
+    width: 40px; /* Define tamanho fixo do círculo */
+    height: 40px; /* Mantém tamanho proporcional */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out;
+    z-index: 10; /* Mantém acima de outros elementos */
+}
+
+/* Ajuste do hover */
+.close:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90vw;  /* Aumenta a largura para ocupar quase toda a tela */
+        height: auto; /* Permite que a altura se ajuste ao conteúdo */
+        max-height: 95vh; /* Garante que não ultrapasse a tela */
+        flex-direction: column;
+    }
+    .image-container {
+        height: 50%; /* Ajusta a proporção da área da imagem */
+    }
+    .modal-description {
+        height: auto;      /* Altura automática */
+        max-height: 40vh;  /* Limita a altura máxima */
+        padding: 10px;     /* Ajusta o espaçamento interno */
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 95vw;
+    }
+    .modal-description {
+        font-size: 14px;
+    }
+}

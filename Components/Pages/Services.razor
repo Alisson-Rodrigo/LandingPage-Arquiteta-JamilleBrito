@@ -23,7 +23,8 @@
                 </div>
                 <h2>Residential Design</h2>
                 <p>Far far away behind the word mountains...</p>
-                <button class = "Button-Services">Learn More</button>
+                <button class="Button-Services" onclick="abrirModal(0)">Learn More</button>
+
             </div>
         </div>
 
@@ -35,7 +36,7 @@
                 </div>
                 <h2>Residential Design</h2>
                 <p>Far far away behind the word mountains...</p>
-                <button class = "Button-Services" >Learn More</button>
+                <button class="Button-Services" onclick="abrirModal(1)">Learn More</button>
             </div>
         </div>
 
@@ -47,9 +48,42 @@
                 </div>
                 <h2>Residential Design</h2>
                 <p>Far far away behind the word mountains...</p>
-                <button class = "Button-Services" =>Learn More</button>
+                <button class="Button-Services" onclick="abrirModal(2)">Learn More</button>
             </div>
         </div>
     </div>
+    <!-- Modal -->
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="fecharModal()">&times;</span>
+
+        <!-- Container da Imagem com Setas -->
+        <div class="image-container">
+            <img id="modal-img" src="images/download.jpg" alt="Imagem do projeto">
+            <div class="arrows">
+                <span id="prev" class="arrow" onclick="anteriorImagem()">&#10094;</span>
+                <span id="next" class="arrow" onclick="proximaImagem()">&#10095;</span>
+            </div>
+        </div>
+
+        <!-- Área de Texto Descritivo -->
+        <div class="modal-description">
+            <h2 id="modal-title">Título do Projeto</h2>
+            <p id="modal-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Donec vehicula dui in augue pharetra, eget dapibus mi dictum. 
+                Vivamus elementum eros at nulla facilisis, id auctor ipsum molestie. 
+                Integer non orci ac metus tincidunt condimentum a eu justo.
+            </p>
+        </div>
+    </div>
+</div>
+
+
     
 </div>
+
+
+
