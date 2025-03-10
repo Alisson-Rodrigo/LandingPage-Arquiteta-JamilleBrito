@@ -265,14 +265,14 @@
     cursor: pointer;
     font-size: 28px;
     padding: 12px;
-    
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     border-radius: 50%;
     transition: 0.3s;
 }
 
 .arrow:hover {
-  
+    background: rgba(0, 0, 0, 0.8);
 }
 
 /* Estilizando a descrição */
@@ -313,6 +313,7 @@
     font-size: 22px;
     font-weight: bold;
     cursor: pointer;
+    background: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
     color: white;
     border-radius: 50%;
     transition: background 0.3s ease-in-out;
