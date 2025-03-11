@@ -1,7 +1,9 @@
 ﻿<section id="projects">
     <div class="text-projects">
-        <h2>LATEST PROJECTS</h2>
-        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+        <h2>ÚLTIMOS PROJETOS</h2>
+        <p>
+            Conheça nossos projetos mais recentes, onde inovação e elegância se encontram para transformar ambientes em experiências únicas.
+        </p>
     </div>
 
     <div class="options-projects">
@@ -10,7 +12,7 @@
                 @foreach (var cat in Categories)
                 {
                     <li>
-                        <button class="@(cat.ToLower() == "all" ? "active" : "")">@cat</button>
+                        <button class="@(cat.ToLower() == "todos" ? "active" : "")">@cat</button>
                     </li>
                 }
             </ul>
@@ -38,14 +40,14 @@
     const grid = document.getElementById("gridImages");
 
     function updateImages(category) {
-        if (category === "all") {
-            // Adiciona classe se necessário e exibe todas as imagens
+        if (category === "todos") {
+            // Exibe todas as imagens
             grid.classList.add("all-filter");
             images.forEach((img) => {
                 img.style.display = "block";
             });
         } else {
-            // Remove a classe para usar grid fixo
+            // Exibe somente as imagens da categoria selecionada (máximo de 4)
             grid.classList.remove("all-filter");
             let count = 0;
             images.forEach((img) => {
@@ -68,43 +70,41 @@
         });
     });
 
-    // Inicializa a página com o filtro "All"
-    updateImages("all");
+    // Inicializa a página com o filtro "Todos"
+    updateImages("todos");
 });
 </script>
 
-
 @code {
-    // Categorias: "All" e as 4 categorias reais
-    List<string> Categories = new() { "All", "Residential", "Corporate", "Restaurant", "Commercial" };
+    // Categorias: "Todos" e as 4 categorias reais
+    List<string> Categories = new() { "Todos", "Residencial", "Corporativo", "Restaurante", "Comercial" };
 
     // Lista de imagens (projetos)
     List<ImageItem> ImageItems = new List<ImageItem>
     {
-        // Residential
-        new ImageItem { Category = "residential", ImagePath = "images/ABNER.jpeg", Title = "Residential Design", Description = "Far far away..." },
-        new ImageItem { Category = "residential", ImagePath = "images/ABNER.jpeg", Title = "Living Room", Description = "Far far away..." },
-        new ImageItem { Category = "residential", ImagePath = "images/ABNER.jpeg", Title = "Bedroom", Description = "Far far away..." },
-        new ImageItem { Category = "residential", ImagePath = "images/ABNER.jpeg", Title = "Bathroom", Description = "Far far away..." },
+        // Residencial
+        new ImageItem { Category = "residencial", ImagePath = "images/ABNER.jpeg", Title = "Design Residencial", Description = "Projeto que une conforto e modernidade para criar ambientes acolhedores." },
+        new ImageItem { Category = "residencial", ImagePath = "images/ABNER.jpeg", Title = "Sala de Estar", Description = "Espaço planejado para reunir elegância e funcionalidade." },
+        new ImageItem { Category = "residencial", ImagePath = "images/ABNER.jpeg", Title = "Quarto", Description = "Ambiente que reflete tranquilidade e design inovador." },
+        new ImageItem { Category = "residencial", ImagePath = "images/ABNER.jpeg", Title = "Banheiro", Description = "Projeto com foco em praticidade e estilo contemporâneo." },
         
-        // Corporate
-        new ImageItem { Category = "corporate", ImagePath = "images/home2.jpg", Title = "Corporate Office", Description = "Far far away..." },
-        new ImageItem { Category = "corporate", ImagePath = "images/home2.jpg", Title = "Boardroom", Description = "Far far away..." },
-        new ImageItem { Category = "corporate", ImagePath = "images/home2.jpg", Title = "Workstation", Description = "Far far away..." },
-        new ImageItem { Category = "corporate", ImagePath = "images/home2.jpg", Title = "Open Space", Description = "Far far away..." },
+        // Corporativo
+        new ImageItem { Category = "corporativo", ImagePath = "images/home2.jpg", Title = "Escritório Corporativo", Description = "Espaço que alia modernidade e eficiência para ambientes de trabalho." },
+        new ImageItem { Category = "corporativo", ImagePath = "images/home2.jpg", Title = "Sala de Reuniões", Description = "Design pensado para promover a colaboração e a inovação." },
+        new ImageItem { Category = "corporativo", ImagePath = "images/home2.jpg", Title = "Ambiente de Trabalho", Description = "Projeto que reflete dinamismo e produtividade." },
+        new ImageItem { Category = "corporativo", ImagePath = "images/home2.jpg", Title = "Espaço Integrado", Description = "Layout que otimiza o uso dos ambientes com elegância." },
         
-        
-        // Restaurant
-        new ImageItem { Category = "restaurant", ImagePath = "images/home3.jpg", Title = "Restaurant Ambience", Description = "Cozy and modern..." },
-        new ImageItem { Category = "restaurant", ImagePath = "images/restaurant2.jpg", Title = "Fine Dining", Description = "Elegant design..." },
-        new ImageItem { Category = "restaurant", ImagePath = "images/restaurant1.jpg", Title = "Casual Dining", Description = "Cozy vibes..." },
-        new ImageItem { Category = "restaurant", ImagePath = "images/restaurant2.jpg", Title = "Modern Eatery", Description = "Elegant design..." },
+        // Restaurante
+        new ImageItem { Category = "restaurante", ImagePath = "images/home3.jpg", Title = "Ambiente de Restaurante", Description = "Espaço que une sofisticação e aconchego para experiências gastronômicas únicas." },
+        new ImageItem { Category = "restaurante", ImagePath = "images/restaurant2.jpg", Title = "Jantar Refinado", Description = "Design que valoriza o requinte e a atmosfera intimista." },
+        new ImageItem { Category = "restaurante", ImagePath = "images/restaurant1.jpg", Title = "Refeição Casual", Description = "Projeto pensado para proporcionar conforto e descontração." },
+        new ImageItem { Category = "restaurante", ImagePath = "images/restaurant2.jpg", Title = "Restaurante Moderno", Description = "Combinação de linhas contemporâneas com um toque de originalidade." },
 
-        // Commercial
-        new ImageItem { Category = "commercial", ImagePath = "images/download.jpeg", Title = "Retail Store", Description = "Dynamic layout..." },
-        new ImageItem { Category = "commercial", ImagePath = "images/commercial2.jpg", Title = "Shopping Mall", Description = "Spacious and bright..." },
-        new ImageItem { Category = "commercial", ImagePath = "images/commercial1.jpg", Title = "Office Complex", Description = "Modern architecture..." },
-        new ImageItem { Category = "commercial", ImagePath = "images/commercial2.jpg", Title = "Business Center", Description = "Contemporary style..." },
+        // Comercial
+        new ImageItem { Category = "comercial", ImagePath = "images/download.jpeg", Title = "Loja Comercial", Description = "Projeto dinâmico que impulsiona a imagem da marca com modernidade." },
+        new ImageItem { Category = "comercial", ImagePath = "images/commercial2.jpg", Title = "Shopping Center", Description = "Espaço amplo e bem planejado para experiências de compra diferenciadas." },
+        new ImageItem { Category = "comercial", ImagePath = "images/commercial1.jpg", Title = "Complexo Empresarial", Description = "Projeto que integra funcionalidade e design para ambientes de alto desempenho." },
+        new ImageItem { Category = "comercial", ImagePath = "images/commercial2.jpg", Title = "Centro de Negócios", Description = "Layout contemporâneo que destaca a identidade e a eficiência empresarial." },
     };
 
     public class ImageItem
