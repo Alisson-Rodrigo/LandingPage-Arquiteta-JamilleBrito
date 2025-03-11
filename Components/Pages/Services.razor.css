@@ -104,18 +104,31 @@
 
 
 .Card {
-    width: 300px;  /* Reduz apenas a largura */
-    height: 550px; /* Mantém a altura original */
+    width: 300px;
+    height: 550px;
     text-align: center;
     background-color: white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    display: flex;            /* Já está como flex */
+    flex-direction: column;   /* Já está como column */
     margin-top: -200px;
     z-index: 2;
     margin-bottom: 50px;
-    
+}
+
+.Card-Content {
+    /* Faz o conteúdo ocupar toda a altura do card */
+    flex: 1;                 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center; /* Isso centraliza o botão horizontalmente */
+    text-align: center;
+
+/* Se quiser remover ou ajustar a margem de cima do botão */
+.Button-Services {
+    margin-bottom: 20px; /* ou um valor menor do que 40px */
 }
 
 
@@ -349,4 +362,5 @@
     .modal-description {
         font-size: 14px;
     }
+}
 }
