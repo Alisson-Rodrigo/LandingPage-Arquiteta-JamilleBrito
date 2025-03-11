@@ -130,3 +130,94 @@
         gap: 10px;
     }
 }
+/* Estilizando o botão dentro do overlay */
+.view-project {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Quando o usuário passa o mouse sobre a imagem, o botão aparece */
+.image-container:hover .view-project {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efeito de hover no botão */
+.view-project:hover {
+    background-color: black;
+    color: white;
+}
+/* Container do Parallax (Tela cheia) */
+.parallax-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* Conteúdo do Parallax */
+.parallax-content {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
+}
+
+/* Imagem de Parallax */
+#parallaxImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Efeito de Parallax ao rolar */
+.parallax-container.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.parallax-container.visible #parallaxImage {
+    transform: scale(1);
+}
+
+
+/* Botão de fechar - X no canto superior direito */
+/* Botão de fechar - X branco no canto superior direito */
+.close-parallax {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    color: white !important; /* Força o branco */
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10; /* Mantém acima da imagem */
+}
+
+/* Efeito ao passar o mouse */
+.close-parallax:hover {
+    opacity: 0.7;
+}

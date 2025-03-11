@@ -27,11 +27,24 @@
                 <div class="overlay">
                     <h3>@image.Title</h3>
                     <p>@image.Description</p>
+                        <button class="view-project">Ver Projeto</button>
+
+
                 </div>
             </div>
         }
     </div>
 </section>
+<!-- Modal de Parallax -->
+<div id="parallaxView" class="parallax-container">
+    <div class="parallax-content">
+        <button id="closeParallax" class="close-parallax">X</button>
+        <div class="parallax-image-wrapper">
+            <img id="parallaxImage" src="" alt="Projeto">
+        </div>
+    </div>
+</div>
+
 
 <script>
  document.addEventListener("DOMContentLoaded", function () {
@@ -51,7 +64,7 @@
             grid.classList.remove("all-filter");
             let count = 0;
             images.forEach((img) => {
-                if (img.dataset.category === category && count < 4) {
+                if (img.dataset.category === category && count < 100) {
                     img.style.display = "block";
                     count++;
                 } else {
@@ -87,7 +100,8 @@
         new ImageItem { Category = "residencial", ImagePath = "images/ABNER.jpeg", Title = "Sala de Estar", Description = "Espaço planejado para reunir elegância e funcionalidade." },
         new ImageItem { Category = "residencial", ImagePath = "images/ABNER.jpeg", Title = "Quarto", Description = "Ambiente que reflete tranquilidade e design inovador." },
         new ImageItem { Category = "residencial", ImagePath = "images/ABNER.jpeg", Title = "Banheiro", Description = "Projeto com foco em praticidade e estilo contemporâneo." },
-        
+        new ImageItem { Category = "residencial", ImagePath = "images/ABNER.jpeg", Title = "Banheiro", Description = "Projeto com foco em praticidade e estilo contemporâneo." },
+
         // Corporativo
         new ImageItem { Category = "corporativo", ImagePath = "images/home2.jpg", Title = "Escritório Corporativo", Description = "Espaço que alia modernidade e eficiência para ambientes de trabalho." },
         new ImageItem { Category = "corporativo", ImagePath = "images/home2.jpg", Title = "Sala de Reuniões", Description = "Design pensado para promover a colaboração e a inovação." },
