@@ -115,9 +115,7 @@
     margin-top: -200px;
     z-index: 2;
     margin-bottom: 50px;
-}
-
-.Card-Content {
+}.Card-Content {
     /* Faz o conteúdo ocupar toda a altura do card */
     flex: 1;                 
     display: flex;
@@ -125,11 +123,11 @@
     justify-content: space-between; 
     align-items: center; /* Isso centraliza o botão horizontalmente */
     text-align: center;
-
-/* Se quiser remover ou ajustar a margem de cima do botão */
+}
 .Button-Services {
     margin-bottom: 20px; /* ou um valor menor do que 40px */
 }
+
 
 
 /* Ajusta a área onde a imagem será colocada */
@@ -362,5 +360,4 @@
     .modal-description {
         font-size: 14px;
     }
-}
 }

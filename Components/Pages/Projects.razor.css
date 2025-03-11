@@ -170,7 +170,7 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    z-index: 1;
+    z-index: 1000;
 }
 
 /* Conteúdo do Parallax */
@@ -200,22 +200,24 @@
     transform: scale(1);
 }
 
-/* Botão de Fechar */
-#closeParallax {
+
+/* Botão de fechar - X no canto superior direito */
+/* Botão de fechar - X branco no canto superior direito */
+.close-parallax {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    background: white;
-    color: black;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    color: white !important; /* Força o branco */
     border: none;
-    padding: 10px 15px;
-    font-size: 1.2rem;
+    font-size: 24px;
     font-weight: bold;
-    border-radius: 5px;
     cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10; /* Mantém acima da imagem */
 }
 
-#closeParallax:hover {
-    background: black;
-    color: white;
+/* Efeito ao passar o mouse */
+.close-parallax:hover {
+    opacity: 0.7;
 }
