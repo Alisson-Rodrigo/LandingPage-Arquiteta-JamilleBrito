@@ -1,9 +1,8 @@
 <div class="Services">
     <div class="Services-Header">
-        <h1>OUR SERVICES</h1>
+        <h1>NOSSOS SERVIÇOS</h1>
         <p>
-            Far far away behind the word mountains far from the countries 
-            Vokalia and Consonantia there live the blind texts.
+            Descubra como transformamos espaços com criatividade e eficiência, unindo design, funcionalidade e inovação em cada projeto.
         </p>
     </div>
 
@@ -19,12 +18,11 @@
         <div class="Card">
             <div class="Card-Content">
                 <div class="Card-Image1">
-                    <img src="images/Residential.jpg" alt="Residential Design">
+                    <img src="images/Residential.jpg" alt="Projetos Residenciais">
                 </div>
-                <h2>Residential Design</h2>
-                <p>Far far away behind the word mountains...</p>
-                <button class="Button-Services" onclick="abrirModal(0)">Learn More</button>
-
+                <h2>Projetos Residenciais</h2>
+                <p>Desenvolvemos projetos residenciais que transformam casas em lares acolhedores, com design moderno e funcional.</p>
+                <button class="Button-Services" onclick="abrirModal(0)">Saiba Mais</button>
             </div>
         </div>
 
@@ -32,11 +30,11 @@
         <div class="Card">
             <div class="Card-Content">
                 <div class="Card-Image1">
-                    <img src="images/Residential.jpg" alt="Residential Design">
+                    <img src="images/Residential.jpg" alt="Design de Interiores">
                 </div>
-                <h2>Residential Design</h2>
-                <p>Far far away behind the word mountains...</p>
-                <button class="Button-Services" onclick="abrirModal(1)">Learn More</button>
+                <h2>Design de Interiores</h2>
+                <p>Criamos ambientes elegantes e funcionais, otimizando cada espaço com soluções inovadoras e personalizadas.</p>
+                <button class="Button-Services" onclick="abrirModal(1)">Saiba Mais</button>
             </div>
         </div>
 
@@ -44,46 +42,36 @@
         <div class="Card">
             <div class="Card-Content">
                 <div class="Card-Image1">
-                    <img src="images/Residential.jpg" alt="Residential Design">
+                    <img src="images/Residential.jpg" alt="Projetos Comerciais">
                 </div>
-                <h2>Residential Design</h2>
-                <p>Far far away behind the word mountains...</p>
-                <button class="Button-Services" onclick="abrirModal(2)">Learn More</button>
+                <h2>Projetos Comerciais</h2>
+                <p>Elaboramos projetos que refletem a identidade da sua marca, transformando espaços comerciais em experiências únicas.</p>
+                <button class="Button-Services" onclick="abrirModal(2)">Saiba Mais</button>
             </div>
         </div>
     </div>
     <!-- Modal -->
 
-<!-- Modal -->
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="fecharModal()">&times;</span>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
 
-        <!-- Container da Imagem com Setas -->
-        <div class="image-container">
-            <img id="modal-img" src="images/download.jpg" alt="Imagem do projeto">
-            <div class="arrows">
-                <span id="prev" class="arrow" onclick="anteriorImagem()">&#10094;</span>
-                <span id="next" class="arrow" onclick="proximaImagem()">&#10095;</span>
+            <!-- Container da Imagem com Setas -->
+            <div class="image-container">
+                <img id="modal-img" src="images/download.jpg" alt="Imagem do projeto">
+                <div class="arrows">
+                    <span id="prev" class="arrow" onclick="anteriorImagem()">&#10094;</span>
+                    <span id="next" class="arrow" onclick="proximaImagem()">&#10095;</span>
+                </div>
             </div>
-        </div>
 
-        <!-- Área de Texto Descritivo -->
-        <div class="modal-description">
-            <h2 id="modal-title">Título do Projeto</h2>
-            <p id="modal-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Donec vehicula dui in augue pharetra, eget dapibus mi dictum. 
-                Vivamus elementum eros at nulla facilisis, id auctor ipsum molestie. 
-                Integer non orci ac metus tincidunt condimentum a eu justo.
-            </p>
+            <!-- Área de Texto Descritivo -->
+            <div class="modal-description">
+                <h2 id="modal-title">Detalhes do Projeto</h2>
+                <p id="modal-text">
+                    Este projeto exemplifica nossa abordagem única, combinando inovação, sustentabilidade e atenção aos detalhes para criar um espaço verdadeiramente inspirador.
+                </p>
+            </div>
         </div>
     </div>
 </div>
-
-
-    
-</div>
-
-
-
