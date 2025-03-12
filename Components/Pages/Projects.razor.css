@@ -170,7 +170,7 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    z-index: 100; /* Mantém acima de tudo */
+    z-index: 1000; /* Mantém acima de tudo */
 }
 
 /* Conteúdo do Parallax */
@@ -214,7 +214,7 @@
     font-weight: bold;
     cursor: pointer;
     transition: opacity 0.3s ease-in-out;
-    z-index: 10; /* Mantém acima da imagem */
+    z-index: 100; /* Mantém acima da imagem */
 }
 
 /* Efeito ao passar o mouse */
