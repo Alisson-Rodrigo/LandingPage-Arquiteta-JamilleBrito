@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentIndex = 0;
     let currentProjectImages = [];
 
-    // Lista de projetos com título, imagens e descrição
     const projetos = [
         {
             titulo: "Projeto Residencial",
