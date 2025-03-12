@@ -176,19 +176,11 @@
 /* Conteúdo do Parallax */
 .parallax-content {
     position: relative;
-    width: 80%;
-    height: 80%;
-    overflow: hidden;
+    display: inline-block;
 }
 
 
-#parallaxImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(1.1);
-    transition: transform 0.5s ease-in-out;
-}
+
 
 /* Efeito de Parallax ao rolar */
 .parallax-container.visible {
@@ -208,7 +200,7 @@
     top: 15px;
     right: 15px;
     background: transparent;
-    color: white !important; /* Força o branco */
+    color: black !important; /* Força o branco */
     border: none;
     font-size: 24px;
     font-weight: bold;
@@ -220,4 +212,16 @@
 /* Efeito ao passar o mouse */
 .close-parallax:hover {
     opacity: 0.7;
+}
+
+#parallaxImage {
+    display: block;
+    margin: auto;
+    width: auto !important;
+    height: auto !important;
+    max-width: 90vw !important;
+    max-height: 90vh !important;
+    object-fit: contain !important;
+    transform: none !important;
+    transition: none !important;
 }

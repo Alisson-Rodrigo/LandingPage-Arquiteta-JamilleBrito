@@ -14,22 +14,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const projetos = [
         {
             titulo: "Projeto Residencial",
-            imagens: ["images/Residential.jpg", "images/home2.jpg", "images/home3.jpg"],
+            imagens: ["images/residencial/residencial1.jpg", "images/residencial/residencial2.jpg", "images/residencial/residencial3.jpg"],
             descricao: "Este é um projeto residencial moderno, com um design inovador e funcionalidade excepcional."
         },
         {
             titulo: "Projeto Comercial",
-            imagens: ["images/commercial1.jpg", "images/commercial2.jpg", "images/commercial3.jpg"],
+            imagens: ["images/comercial/comercial1.jpg", "images/comercial/comercial2.jpg", "images/comercial/comercial3.jpg"],
             descricao: "Projeto comercial que combina elegância e eficiência para ambientes de trabalho sofisticados."
         },
         {
             titulo: "Projeto de Escritório",
-            imagens: ["images/office1.jpg", "images/office2.jpg", "images/office3.jpg"],
+            imagens: ["images/escritorio/escritorio1.jpg", "images/escritorio/escritorio2.jpg", "images/escritorio/escritorio3.jpg"],
             descricao: "Design exclusivo para escritórios, promovendo um ambiente de trabalho confortável e produtivo."
         }
     ];
 
-    // Função para abrir o modal com os detalhes do projeto
     window.abrirModal = function (index) {
         currentIndex = 0;
         currentProjectImages = projetos[index].imagens;
