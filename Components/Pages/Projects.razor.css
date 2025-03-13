@@ -211,7 +211,7 @@
 
 /* Efeito ao passar o mouse */
 .close-parallax:hover {
-    opacity: 0.7;
+    
     color: black !important;
     
 }
