@@ -285,7 +285,6 @@
 }
 
 .arrow:hover {
-  
     color: white;
 }
 
@@ -324,19 +323,17 @@
     display: flex;
     align-items: center; /* Centraliza verticalmente */
     justify-content: center; /* Centraliza horizontalmente */
-    font-size: 22px;
+    font-size: 60px;
     font-weight: bold;
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
     color: white;
     border-radius: 50%;
     transition: background 0.3s ease-in-out;
     z-index: 10; /* Mantém acima de outros elementos */
 }
 
-/* Ajuste do hover */
-.close:hover {
-    background: rgba(0, 0, 0, 0.8);
+.close:hover{
+    color: black;
 }
 
 @media (max-width: 768px) {

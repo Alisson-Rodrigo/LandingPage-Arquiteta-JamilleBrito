@@ -200,9 +200,9 @@
     top: 15px;
     right: 15px;
     background: transparent;
-    color: black !important; /* Força o branco */
+    color: white !important; /* Força o branco */
     border: none;
-    font-size: 24px;
+    font-size: 40px;
     font-weight: bold;
     cursor: pointer;
     transition: opacity 0.3s ease-in-out;
@@ -212,7 +212,10 @@
 /* Efeito ao passar o mouse */
 .close-parallax:hover {
     opacity: 0.7;
+    color: black !important;
+    
 }
+
 
 #parallaxImage {
     display: block;
