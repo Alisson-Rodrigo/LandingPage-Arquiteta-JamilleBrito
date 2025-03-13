@@ -323,7 +323,7 @@
     display: flex;
     align-items: center; /* Centraliza verticalmente */
     justify-content: center; /* Centraliza horizontalmente */
-    font-size: 60px;
+    font-size: 40px;
     font-weight: bold;
     cursor: pointer;
     color: white;
