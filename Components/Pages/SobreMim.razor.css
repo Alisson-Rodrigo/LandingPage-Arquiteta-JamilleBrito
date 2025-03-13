@@ -1,4 +1,4 @@
-/* Seção Sobre */
+/* Seï¿½ï¿½o Sobre */
 #about {
     padding: 80px 10%;
     background-color: #fff;
@@ -11,7 +11,7 @@
     justify-content: space-between;
     gap: 50px;
     max-width: 1200px;
-    margin: 0 auto; /* Centraliza */
+    margin: 0 auto; 
 }
 
 /* Texto */
@@ -57,7 +57,7 @@
     color: #333;
 }
 
-/* Botão */
+/* Botï¿½o */
 .btn-read-more {
     margin-top: 20px;
     padding: 12px 24px;
@@ -91,9 +91,9 @@
 /* Caixa de Depoimento */
 .testimonial-box {
     position: absolute;
-    bottom: -120px; /* Ajustei a posição */
+    bottom: -120px; /* Ajustei a posiï¿½ï¿½o */
     left: 50%;
-    transform: translateX(-50%); /* Mantém centralizado */
+    transform: translateX(-50%); /* Mantï¿½m centralizado */
     background: #EBEBEB;
     padding: 20px;
     width: 80%;
