@@ -278,14 +278,15 @@
     cursor: pointer;
     font-size: 28px;
     padding: 12px;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+  
+    color: black;
     border-radius: 50%;
     transition: 0.3s;
 }
 
 .arrow:hover {
-    background: rgba(0, 0, 0, 0.8);
+  
+    color: white;
 }
 
 /* Estilizando a descrição */
