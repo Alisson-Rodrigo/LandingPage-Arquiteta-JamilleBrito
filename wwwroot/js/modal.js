@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             titulo: "Projeto Comercial",
-            imagens: ["images/comercial/Comercial1.jpg", "images/Comercial/comercial2.jpg", "images/Comercial/comercial3.jpg"],
+            imagens: ["images/comercial1.jpg", "images/comercial2.jpg", "images/comercial3.jpg"],
             descricao: "Projeto comercial que combina elegância e eficiência para ambientes de trabalho sofisticados."
         },
         {
