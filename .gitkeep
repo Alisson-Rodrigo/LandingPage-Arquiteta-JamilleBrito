@@ -1,0 +1,3 @@
+touch wwwroot/images/Escritorio/.gitkeep
+touch wwwroot/images/Comercial/.gitkeep
+touch wwwroot/images/Residencial/.gitkeep
