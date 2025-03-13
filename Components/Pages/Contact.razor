@@ -1,28 +1,27 @@
-﻿document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contactForm");
-  if (form) {
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      // Extrai os dados do formulário
-      const formData = new FormData(form);
-      const emailRequest = {
-        nome: formData.get("name"),
-        email: formData.get("email"),
-        assunto: formData.get("subject"),
-        mensagem: formData.get("message")
-      };
+﻿ <section id="contact">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2>Entre em contato</h2>
+        <p>Fale conosco para transformar seu espaço em um ambiente único e inspirador.</p>
+        <p><strong>Nome:</strong> Fernando Mendes</p>
+        <p><strong>Endereço:</strong> São Paulo, Brasil</p>
+        <p><strong>Telefone:</strong> +55 11 98765-4321</p>
+        <p><strong>Horário:</strong> 8h - 18h (Segunda a Sexta)</p>
+        <div class="social-icons">
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+      </div>
 
-      console.log("Dados extraídos do formulário:", emailRequest);
-
-      try {
-        const result = await sendEmail(emailRequest);
-        alert("E-mail enviado com sucesso!");
-        form.reset();
-      } catch (error) {
-        alert("Erro ao enviar e-mail. Verifique o console para mais detalhes.");
-      }
-    });
-  } else {
-    console.error("Elemento com id 'contactForm' não encontrado.");
-  }
-});
+      <div class="contact-form">
+        <form id="contactForm">
+          <input type="text" name="name" placeholder="Nome" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="text" name="subject" placeholder="Assunto" required>
+          <textarea name="message" placeholder="Mensagem" required></textarea>
+          <button type="submit">ENVIAR</button>
+        </form>
+      </div>
+    </div>
+  </section>
