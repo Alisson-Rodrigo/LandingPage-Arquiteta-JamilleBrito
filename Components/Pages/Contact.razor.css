@@ -93,15 +93,31 @@
         }
 
 /* Responsividade */
+
+/* RESPONSIVIDADE */
 @media (max-width: 900px) {
     .contact-container {
-        flex-direction: column;
-        align-items: center;
+      /* Muda o layout para coluna */
+      flex-direction: column;
+      align-items: center;      /* Centraliza os itens no eixo horizontal */
+      justify-content: center;  /* Centraliza os itens no eixo vertical (se necessário) */
+      padding: 20px;            /* Ajusta o padding para telas menores */
     }
-
+  
+    /* Ajusta as larguras para caber melhor em mobile */
     .contact-info,
     .contact-form {
-        margin-top: 20px;
-        width: 100%;
+      width: 90%;
+      max-width: 400px;  /* Limita a largura para não ficar muito grande */
+      margin: 0 auto 20px;
     }
-}
+  
+    /* Opcional: se quiser o texto da seção de contato também centralizado */
+    /* .contact-info {
+      text-align: center;
+    } */
+  
+    .contact-form {
+      padding: 20px;  /* Ajusta o padding para telas menores */
+    }
+  }
