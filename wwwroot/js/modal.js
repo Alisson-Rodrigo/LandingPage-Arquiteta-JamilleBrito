@@ -13,17 +13,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const projetos = [
         {
             titulo: "Projeto Residencial",
-            imagens: ["images/residencial/residencial1.jpg", "images/residencial/residencial2.jpg", "images/residencial/residencial3.jpg"],
-            descricao: "Este é um projeto residencial moderno, com um design inovador e funcionalidade excepcional."
+            imagens: ["images/Residencial/residencial1.jpg", "images/Residencial/residencial2.jpg", "images/Residencial/residencial3.jpg"],
+            descricao: "Este é um projeto Residencial moderno, com um design inovador e funcionalidade excepcional."
         },
         {
             titulo: "Projeto Comercial",
-            imagens: ["images/comercial/comercial1.jpg", "images/comercial/comercial2.jpg", "images/comercial/comercial3.jpg"],
+            imagens: ["images/comercial/Comercial1.jpg", "images/Comercial/comercial2.jpg", "images/Comercial/comercial3.jpg"],
             descricao: "Projeto comercial que combina elegância e eficiência para ambientes de trabalho sofisticados."
         },
         {
             titulo: "Projeto de Escritório",
-            imagens: ["images/escritorio/escritorio1.jpg", "images/escritorio/escritorio2.jpg", "images/escritorio/escritorio3.jpg"],
+            imagens: ["images/Escritorio/escritorio1.jpg", "images/Escritorio/escritorio2.jpg", "images/Escritorio/escritorio3.jpg"],
             descricao: "Design exclusivo para escritórios, promovendo um ambiente de trabalho confortável e produtivo."
         }
     ];
